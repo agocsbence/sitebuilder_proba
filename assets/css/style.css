@@ -43,6 +43,12 @@ header {
   padding: 1.5rem;
   z-index: 998;
 }
+@media screen and (max-width: 1024px) {
+  header {
+    width: calc(100% - 5.2rem);
+    padding: 1.5rem 2.6rem;
+  }
+}
 header #header-content {
   width: 100%;
   display: flex;
@@ -78,21 +84,46 @@ header #header-content #header-left #menu-button span:nth-child(2) {
 header #header-content #header-left #menu-button span:nth-child(3) {
   top: 14px;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1440px) {
   header #header-content #desktop-nav-wrapper {
     display: none;
   }
 }
 header #header-content #header-right #header-buttons a {
   margin-left: 0.8rem;
+  color: #014593;
+  text-decoration: none;
+}
+@media screen and (max-width: 1024px) {
+  header #header-content #header-right #header-buttons a {
+    padding: 0.1rem 0.6rem 0.4rem 0.6rem;
+    background: #fff;
+    border-radius: 2rem;
+  }
+}
+header #header-content #header-right #header-buttons a span {
+  margin-right: 1.4rem;
+  font-size: 0.8125rem;
+  line-height: 0.93rem;
+  vertical-align: middle;
 }
 @media screen and (max-width: 768px) {
   header #header-content #header-right #header-buttons a span {
     display: none;
   }
 }
+header #header-content #header-right #header-buttons a svg {
+  vertical-align: middle;
+  width: 1rem;
+  height: 1rem;
+}
 header #header-content #header-right #header-buttons a svg path {
   stroke: #fff;
+}
+@media screen and (max-width: 1024px) {
+  header #header-content #header-right #header-buttons a svg path {
+    stroke: #014593;
+  }
 }
 
 #hero {
@@ -102,6 +133,12 @@ header #header-content #header-right #header-buttons a svg path {
   background-size: cover;
   padding: 1.5rem;
   padding-top: 5.4rem;
+}
+@media screen and (max-width: 1024px) {
+  #hero {
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+  }
 }
 #hero h1 {
   font-weight: bold;
@@ -119,11 +156,22 @@ header #header-content #header-right #header-buttons a svg path {
   color: #fff;
   margin-bottom: 3.8rem;
 }
+@media screen and (max-width: 1024px) {
+  #hero .lead {
+    max-width: 55%;
+  }
+}
 #hero .btn-primary {
   text-align: center;
-  width: calc(100% - 3rem);
+  padding-left: 6rem;
+  padding-right: 6rem;
   font-size: 1rem;
   margin-bottom: 3rem;
+}
+@media screen and (max-width: 1024px) {
+  #hero .btn-primary {
+    margin-bottom: 7rem;
+  }
 }
 
 #info {
@@ -132,6 +180,16 @@ header #header-content #header-right #header-buttons a svg path {
   align-items: center;
   justify-content: space-between;
   margin: 2rem 1.5rem;
+}
+@media screen and (max-width: 1024px) {
+  #info {
+    flex-direction: row;
+    justify-content: center;
+    margin: 1.5rem 2.6rem;
+  }
+  #info p {
+    padding: 1.25rem;
+  }
 }
 @media screen and (max-width: 768px) {
   #info img {

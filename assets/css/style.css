@@ -15,9 +15,32 @@ body {
   font-size: 1rem;
   line-height: 150%;
 }
+@media screen and (min-width: 1440px) {
+  body {
+    font-size: 1.325rem;
+    line-height: 143%;
+  }
+}
 
 img {
   max-width: 100%;
+}
+
+.container {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    padding-left: 2.6rem !important;
+    padding-right: 2.6rem !important;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    padding-left: 15.625rem !important;
+    padding-right: 15.625rem !important;
+  }
 }
 
 .btn {
@@ -38,15 +61,19 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: calc(100% - 3rem);
+  width: calc(100% - 2 * (1.5rem));
   background: transparent;
   padding: 1.5rem;
   z-index: 998;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   header {
-    width: calc(100% - 5.2rem);
-    padding: 1.5rem 2.6rem;
+    width: calc(100% - 2 * (2.6rem));
+  }
+}
+@media screen and (min-width: 1440px) {
+  header {
+    width: calc(100% - 2 * (15.625rem));
   }
 }
 header #header-content {
@@ -67,6 +94,11 @@ header #header-content #header-left #menu-button {
   width: 20px;
   height: 16px;
   margin-right: 1rem;
+}
+@media screen and (min-width: 1440px) {
+  header #header-content #header-left #menu-button {
+    display: none;
+  }
 }
 header #header-content #header-left #menu-button span {
   position: absolute;
@@ -94,7 +126,7 @@ header #header-content #header-right #header-buttons a {
   color: #014593;
   text-decoration: none;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) {
   header #header-content #header-right #header-buttons a {
     padding: 0.1rem 0.6rem 0.4rem 0.6rem;
     background: #fff;
@@ -120,7 +152,7 @@ header #header-content #header-right #header-buttons a svg {
 header #header-content #header-right #header-buttons a svg path {
   stroke: #fff;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) {
   header #header-content #header-right #header-buttons a svg path {
     stroke: #014593;
   }
@@ -134,17 +166,17 @@ header #header-content #header-right #header-buttons a svg path {
   padding: 1.5rem;
   padding-top: 5.4rem;
 }
-@media screen and (max-width: 1024px) {
-  #hero {
-    padding-left: 2.6rem;
-    padding-right: 2.6rem;
-  }
-}
 #hero h1 {
   font-weight: bold;
   font-size: 3rem;
   line-height: 104%;
   color: #FFDFBA;
+}
+@media screen and (min-width: 1440px) {
+  #hero h1 {
+    font-size: 3.75rem;
+    line-height: 117%;
+  }
 }
 #hero .lead {
   display: -webkit-box;
@@ -156,21 +188,31 @@ header #header-content #header-right #header-buttons a svg path {
   color: #fff;
   margin-bottom: 3.8rem;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   #hero .lead {
     max-width: 55%;
   }
 }
+@media screen and (min-width: 1440px) {
+  #hero .lead {
+    max-width: 68.5%;
+  }
+}
 #hero .btn-primary {
   text-align: center;
-  padding-left: 6rem;
-  padding-right: 6rem;
+  padding-left: 5.9rem;
+  padding-right: 5.9rem;
   font-size: 1rem;
   margin-bottom: 3rem;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   #hero .btn-primary {
     margin-bottom: 7rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #hero .btn-primary {
+    padding: 0.6875rem 1.625rem 0.8125rem 1.625rem;
   }
 }
 
@@ -179,16 +221,25 @@ header #header-content #header-right #header-buttons a svg path {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: 2rem 1.5rem;
+  padding: 2rem 1.5rem;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   #info {
     flex-direction: row;
     justify-content: center;
-    margin: 1.5rem 2.6rem;
+    padding: 1.5rem 2.6rem;
   }
   #info p {
-    padding: 1.25rem;
+    padding-left: 1.25rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #info {
+    flex-direction: row;
+    justify-content: center;
+  }
+  #info p {
+    padding-left: 3.43rem;
   }
 }
 @media screen and (max-width: 768px) {

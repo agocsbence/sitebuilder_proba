@@ -2,15 +2,19 @@
 @import '../css/reset.css', '../css/normalize.css';
 
 //variables
-$gold-light:              #FFDFBA;
-$gold-dark:               #AB9A88;
-$blue:                    #014593;
-$white:                   #fff;
+$gold-light:                         #FFDFBA;
+$gold-dark:                          #AB9A88;
+$blue:                               #014593;
+$white:                              #fff;
+
+$container--padding-mobile:            1.5rem;
+$container--padding-tablet:            2.6rem;
+$container--padding-desktop:           15.625rem;
 
 //breakpoints
-$mobile:                    768px;
-$tablet:                    1024px;
-$desktop:                   1440px;
+$mobile:                               768px;
+$tablet:                               1024px;
+$desktop:                              1440px;
 
 //base
 * {
@@ -26,10 +30,27 @@ body {
     color: $blue;
     font-size: 1rem;
     line-height: 150%;
+    @media screen and (min-width: $desktop) {
+        font-size: 1.325rem;
+        line-height: 143%;
+    }
 }
 
 img {
     max-width: 100%;
+}
+
+.container {
+    padding-left: $container--padding-mobile !important;
+    padding-right: $container--padding-mobile !important; 
+    @media screen and (min-width: $mobile) and (max-width: $tablet) {
+        padding-left: $container--padding-tablet !important;
+        padding-right: $container--padding-tablet !important;
+    }
+    @media screen and (min-width: $desktop) {
+        padding-left: $container--padding-desktop !important;
+        padding-right: $container--padding-desktop !important;
+    }
 }
 
 .btn {
@@ -51,13 +72,15 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: calc(100% - 3rem);
+    width: calc(100% - 2 * (#{ $container--padding-mobile}));
     background: transparent;
     padding: 1.5rem;
     z-index: 998;
-    @media screen and (max-width: $tablet) {
-        width: calc(100% - 5.2rem);
-        padding: 1.5rem 2.6rem;
+    @media screen and (min-width: $mobile) and (max-width: $tablet) {
+        width: calc(100% - 2 * (#{ $container--padding-tablet}));
+    }
+    @media screen and (min-width: $desktop) {
+        width: calc(100% - 2 * (#{ $container--padding-desktop}));
     }
     nav {}
     #header-content {
@@ -76,6 +99,9 @@ header {
                 width: 20px;
                 height: 16px;
                 margin-right: 1rem;
+                @media screen and (min-width: $desktop) {
+                    display: none;
+                }
                 span {
                     position: absolute;
                     left: 0;
@@ -99,7 +125,7 @@ header {
                     margin-left: .8rem;
                     color: $blue;
                     text-decoration: none;
-                    @media screen and (max-width: $tablet) {
+                    @media screen and (min-width: $mobile) {
                         padding: .1rem .6rem .4rem .6rem;
                         background: $white;
                         border-radius: 2rem;
@@ -119,7 +145,7 @@ header {
                         height: 1rem;
                         path {
                             stroke: $white;
-                            @media screen and (max-width: $tablet) {
+                            @media screen and (min-width: $mobile) {
                                 stroke: $blue;
                             }
                         }
@@ -136,15 +162,15 @@ header {
     background-size: cover;
     padding: 1.5rem;
     padding-top: 5.4rem;
-    @media screen and (max-width: $tablet) {
-        padding-left: 2.6rem;
-        padding-right: 2.6rem; 
-    }
     h1 {
         font-weight: bold;
         font-size: 3rem;
         line-height: 104%;
         color: $gold-light;
+        @media screen and (min-width: $desktop) {
+            font-size: 3.75rem;
+            line-height: 117%;
+        }
     }
     .lead {
         display: -webkit-box;
@@ -155,18 +181,24 @@ header {
         font-size: 1rem;
         color: $white;
         margin-bottom: 3.8rem;
-        @media screen and (max-width: $tablet) {
+        @media screen and (min-width: $mobile) and (max-width: $tablet) {
             max-width: 55%;
+        }
+        @media screen and (min-width: $desktop) {
+            max-width: 68.5%;
         }
     }
     .btn-primary {
         text-align: center;
-        padding-left: 6rem;
-        padding-right: 6rem;
+        padding-left: 5.9rem;
+        padding-right: 5.9rem;
         font-size: 1rem;
         margin-bottom: 3rem;
-        @media screen and (max-width: $tablet) {
+        @media screen and (min-width: $mobile) and (max-width: $tablet) {
             margin-bottom: 7rem;
+        }
+        @media screen and (min-width: $desktop) {
+            padding: .6875rem 1.625rem .8125rem 1.625rem;
         }
     }
 }
@@ -175,13 +207,20 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 2rem 1.5rem;
-    @media screen and (max-width: $tablet) {
+    padding: 2rem 1.5rem;
+    @media screen and (min-width: $mobile) and (max-width: $tablet) {
         flex-direction: row;
         justify-content: center;
-        margin: 1.5rem 2.6rem;
+        padding: 1.5rem $container--padding-tablet;
         p {
-            padding: 1.25rem;
+            padding-left: 1.25rem;
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        flex-direction: row;
+        justify-content: center;
+        p {
+            padding-left: 3.43rem;
         }
     }
     img {

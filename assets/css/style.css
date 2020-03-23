@@ -353,8 +353,6 @@ header #mobile-menu #mobile-menu-wrapper #mobile-menu-content nav#mobile-navigat
   columns: 2;
   -webkit-columns: 2;
   -moz-columns: 2;
-  padding: 1rem 0;
-  border-bottom: 1px solid #dfe3e8;
 }
 header #mobile-menu #mobile-menu-wrapper #mobile-menu-content nav#mobile-navigation ul #additional-menu-items ul.mobile-sub-menu li a {
   color: #AB9A88;

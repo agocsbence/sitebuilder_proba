@@ -53,6 +53,6 @@ loginBtn.addEventListener("click", function() {
         loggedIn = false;
         mobileMenuContent.classList.toggle("logged-in");
     }
-    console.log(loggedIn);
+    console.log("logged in: " + loggedIn);
 });
 

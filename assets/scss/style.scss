@@ -97,7 +97,7 @@ header {
     left: 0;
     width: calc(100% - 2 * (#{ $container--padding-mobile}));
     background: transparent;
-    padding: .8rem $container--padding-mobile;
+    // padding: .8rem $container--padding-mobile;
     z-index: 997;
     @media screen and (min-width: $mobile) and (max-width: $tablet) {
         width: calc(100% - 2 * (#{ $container--padding-tablet}));
@@ -374,6 +374,7 @@ header {
             flex-direction: row;
             align-items: center;
             justify-content: flex-start;
+            padding: .8rem 0;
             #menu-button {
                 @media screen and (min-width: $desktop) {
                     display: none;
@@ -399,15 +400,16 @@ header {
                     line-height: 150%;
                     li.menu-item {
                         margin: 0 0.75rem;
+                        padding: .8rem 0;
                         position: relative;
                         ul.sub-menu {
                             visibility: hidden;
                             position: absolute;
                             transition: all 0.5s ease;
-                            margin-top: 1rem;
                             opacity: 0;
-                            left: 0;
-                            width: 0;
+                            left: -3.3rem;
+                            top: 3rem;
+                            width: max-content;
                             display: none;
                             background: $white;
                             color: $gold-dark;
@@ -419,13 +421,25 @@ header {
                             columns: 2;
                             -webkit-columns: 2;
                             -moz-columns: 2;
-                            transform: all .3s ease;
-                            &:hover,
-                            &:focus {
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                width: 1rem;
+                                height: 1rem;
+                                left: 5.6rem;
+                                top: -0.3rem;
+                                background: $white;
+                                border: 1px solid #ECF0FF;
+                                box-sizing: border-box;
+                                box-shadow: 0px 6px 12px rgba(217, 225, 255, 0.5);
+                                border-radius: 4px;
+                                transform: rotate(45deg);
+                                z-index: -1;
+                            }
+                            &.show {
                                 visibility: visible;
                                 opacity: 1;
                                 display: block;
-                                width: max-content;
                             }
                             li {
                                 display: flex;
@@ -434,7 +448,6 @@ header {
                                 justify-content: flex-start;
                                 padding: 1rem 0;
                                 border-bottom: 1px solid $grey;
-                                clear: both;
                                 &:nth-child(3n) {
                                     border-bottom: none;
                                 } 
@@ -471,6 +484,7 @@ header {
             }
         }
         #header-right {
+            padding: .8rem 0;
             #header-buttons {
                 a {
                     margin-left: .8rem;

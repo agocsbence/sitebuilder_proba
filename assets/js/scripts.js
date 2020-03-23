@@ -6,10 +6,39 @@ let menuBtn = document.getElementById("menu-button"),
     mobileMenuHeader = document.getElementById("mobile-menu-header"),
     langSelect = document.getElementById("languageSelector"),
     body = document.getElementsByTagName("body")[0],
+    loginBtnMobile = document.getElementById("loginBtnMobile"),
     loginBtn = document.getElementById("loginBtn"),
-    outsideMenu = document.getElementById("tablet-menu-outside");
+    loginBtnWrapper = document.getElementById("login-button"),
+    logOut = document.getElementById("logOut"),
+    outsideMenu = document.getElementById("tablet-menu-outside"),
+    userAvatar = document.getElementById("user-avatar");
 
-var loggedIn = false;
+var loggedIn = "";
+
+function logInCheck() {
+    event.preventDefault();
+    if( loggedIn == false) {
+        loggedIn = true;
+        mobileMenuContent.classList.toggle("logged-in");
+        body.classList.toggle("logged-in");
+    } else {
+        loggedIn = false;
+        mobileMenuContent.classList.toggle("logged-in");
+        body.classList.toggle("logged-in");
+    }
+    console.log("logged in: " + loggedIn);
+    if (loggedIn == true) {
+        userAvatar.classList.toggle("show");
+        loginBtnWrapper.classList.toggle("hide");
+    } else {
+        userAvatar.classList.toggle("show");
+        loginBtnWrapper.classList.toggle("hide");
+    }
+};
+
+loginBtnMobile.addEventListener("click", logInCheck);
+loginBtn.addEventListener("click", logInCheck);
+logOut.addEventListener("click", logInCheck);
 
 menuBtn.addEventListener("click", function() {
     mobileMenu.classList.toggle("opened");
@@ -42,17 +71,5 @@ langSelect.addEventListener("click", function() {
     } else {
         langSelect.innerHTML = "English";
     }
-});
-
-loginBtn.addEventListener("click", function() {
-    event.preventDefault();
-    if( loggedIn == false) {
-        loggedIn = true;
-        mobileMenuContent.classList.toggle("logged-in");
-    } else {
-        loggedIn = false;
-        mobileMenuContent.classList.toggle("logged-in");
-    }
-    console.log("logged in: " + loggedIn);
 });
 

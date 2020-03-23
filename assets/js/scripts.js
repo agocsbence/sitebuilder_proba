@@ -6,23 +6,33 @@ let menuBtn = document.getElementById("menu-button"),
     mobileMenuHeader = document.getElementById("mobile-menu-header"),
     langSelect = document.getElementById("languageSelector"),
     body = document.getElementsByTagName("body")[0],
-    loginBtn = document.getElementById("loginBtn");
+    loginBtn = document.getElementById("loginBtn"),
+    outsideMenu = document.getElementById("tablet-menu-outside");
 
 var loggedIn = false;
 
 menuBtn.addEventListener("click", function() {
     mobileMenu.classList.toggle("opened");
     mobileMenuHeader.classList.toggle("opened");
+    outsideMenu.classList.toggle("opened");
 });
 
 closeBtn.addEventListener("click", function() {
     mobileMenu.classList.toggle("opened");
     mobileMenuHeader.classList.toggle("opened");
+    outsideMenu.classList.toggle("opened");
 });
 
 mobileMenuBtn.addEventListener("click", function() {
     mobileMenu.classList.toggle("opened");
     mobileMenuHeader.classList.toggle("opened");
+    outsideMenu.classList.toggle("opened");
+});
+
+outsideMenu.addEventListener("click", function(){
+    mobileMenu.classList.toggle("opened");
+    mobileMenuHeader.classList.toggle("opened");
+    outsideMenu.classList.toggle("opened");
 });
 
 langSelect.addEventListener("click", function() {
@@ -45,3 +55,4 @@ loginBtn.addEventListener("click", function() {
     }
     console.log(loggedIn);
 });
+

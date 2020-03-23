@@ -104,6 +104,17 @@ header {
     width: calc(100% - 2 * (15.625rem));
   }
 }
+header #tablet-menu-outside {
+  position: absolute;
+  top: 0;
+  right: -100vw;
+  width: 50vw;
+  height: 100vw;
+  z-index: 998;
+}
+header #tablet-menu-outside.opened {
+  right: 0;
+}
 header #mobile-menu {
   position: fixed;
   top: 0;

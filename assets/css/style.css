@@ -117,6 +117,13 @@ header #mobile-menu {
   overflow-y: auto;
   box-sizing: border-box;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  header #mobile-menu {
+    box-shadow: 0px 6px 12px rgba(27, 39, 56, 0.302256);
+    width: 50vw;
+    left: -50vw;
+  }
+}
 header #mobile-menu.opened {
   left: 0;
 }
@@ -135,6 +142,12 @@ header #mobile-menu #mobile-menu-header {
   z-index: 999;
   transition: top 0.3s ease;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  header #mobile-menu #mobile-menu-header {
+    width: calc(50% - 2 * (2.6rem));
+    padding: 0.8rem 2.6rem;
+  }
+}
 header #mobile-menu #mobile-menu-header.opened {
   top: 0;
 }
@@ -143,6 +156,11 @@ header #mobile-menu #mobile-menu-header #mobile-menu-header-left {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  header #mobile-menu #mobile-menu-header #mobile-menu-header-left #mobile-menu-button {
+    display: none;
+  }
 }
 header #mobile-menu #mobile-menu-header #mobile-menu-header-left #mobile-menu-button.hamburger-icon span {
   background: #014593 !important;
@@ -157,6 +175,7 @@ header #mobile-menu #mobile-menu-header #mobile-menu-header-right #closeBtn {
 header #mobile-menu #mobile-menu-wrapper {
   position: absolute;
   height: auto;
+  width: 100%;
   overflow-y: scroll;
   top: 0;
   left: 0;
@@ -165,6 +184,12 @@ header #mobile-menu #mobile-menu-wrapper {
 header #mobile-menu #mobile-menu-wrapper #mobile-menu-content {
   padding: 1.5rem;
   padding-top: calc(4rem + 1.5rem);
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  header #mobile-menu #mobile-menu-wrapper #mobile-menu-content {
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+  }
 }
 header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #mobile-profile-section {
   padding-top: calc(1.8rem - 1.5rem);
@@ -204,6 +229,11 @@ header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #mobile-menu-btn {
   padding-top: calc(1.8rem - 1.5rem);
   padding-bottom: 1.8rem;
   border-bottom: 1px solid #dfe3e8;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #mobile-menu-btn {
+    display: none;
+  }
 }
 header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #mobile-menu-btn .btn {
   text-align: center;
@@ -264,6 +294,11 @@ header #mobile-menu #mobile-menu-wrapper #mobile-menu-content nav#mobile-navigat
 header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #menu-bottom-buttons {
   padding: 3rem;
   text-align: center;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #menu-bottom-buttons {
+    display: none;
+  }
 }
 header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #menu-bottom-buttons a {
   color: #014593;

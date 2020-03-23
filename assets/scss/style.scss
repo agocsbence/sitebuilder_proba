@@ -169,6 +169,46 @@ header {
             #mobile-menu-content {
                 padding: $container--padding-mobile;
                 padding-top: calc(4rem + #{$container--padding-mobile});
+                #mobile-profile-section {
+                    padding-top: calc(1.8rem - #{$container--padding-mobile});
+                    padding-bottom: 1.8rem;
+                    border-bottom: 1px solid $grey;
+                    display: none;
+                    #profile-details {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-start;
+                        img {
+                            max-width: 2.5rem;
+                            max-height: 2.5rem;
+                            border-radius: 2.5rem;
+                            margin-right: 1rem;
+                        }
+                        .login-info {
+                            span {
+                                display: block;
+                                line-height: 1.25rem;
+                                font-size: .625rem;
+                                &.profile-name {
+                                    font-size: .875rem;
+                                }
+                            }
+                        }
+                    }
+                    #profile-menu {
+                        margin-top: 1.25rem;
+                        ul {
+                            li {
+                                a {
+                                    color: $gold-dark;
+                                    font-size: .875rem;
+                                    line-height: 286%;
+                                    font-weight: normal;
+                                }
+                            }
+                        }
+                    }
+                }
                 #mobile-menu-btn {
                     padding-top: calc(1.8rem - #{$container--padding-mobile});
                     padding-bottom: 1.8rem;
@@ -273,6 +313,17 @@ header {
                                 stroke: $blue;
                             }
                         }
+                    }
+                }
+                &.logged-in {
+                    #mobile-menu-btn,
+                    nav#mobile-navigation .mobile-menu-item:nth-child(2),
+                    nav#mobile-navigation .mobile-menu-item:nth-child(3),
+                    #additional-menu-items {
+                        display: none;
+                    }
+                    #mobile-profile-section {
+                        display: block;
                     }
                 }
             }

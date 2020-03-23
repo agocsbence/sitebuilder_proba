@@ -166,6 +166,40 @@ header #mobile-menu #mobile-menu-wrapper #mobile-menu-content {
   padding: 1.5rem;
   padding-top: calc(4rem + 1.5rem);
 }
+header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #mobile-profile-section {
+  padding-top: calc(1.8rem - 1.5rem);
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid #dfe3e8;
+  display: none;
+}
+header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #mobile-profile-section #profile-details {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #mobile-profile-section #profile-details img {
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  border-radius: 2.5rem;
+  margin-right: 1rem;
+}
+header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #mobile-profile-section #profile-details .login-info span {
+  display: block;
+  line-height: 1.25rem;
+  font-size: 0.625rem;
+}
+header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #mobile-profile-section #profile-details .login-info span.profile-name {
+  font-size: 0.875rem;
+}
+header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #mobile-profile-section #profile-menu {
+  margin-top: 1.25rem;
+}
+header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #mobile-profile-section #profile-menu ul li a {
+  color: #AB9A88;
+  font-size: 0.875rem;
+  line-height: 286%;
+  font-weight: normal;
+}
 header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #mobile-menu-btn {
   padding-top: calc(1.8rem - 1.5rem);
   padding-bottom: 1.8rem;
@@ -255,6 +289,15 @@ header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #menu-bottom-butto
 }
 header #mobile-menu #mobile-menu-wrapper #mobile-menu-content #menu-bottom-buttons a svg path {
   stroke: #014593;
+}
+header #mobile-menu #mobile-menu-wrapper #mobile-menu-content.logged-in #mobile-menu-btn,
+header #mobile-menu #mobile-menu-wrapper #mobile-menu-content.logged-in nav#mobile-navigation .mobile-menu-item:nth-child(2),
+header #mobile-menu #mobile-menu-wrapper #mobile-menu-content.logged-in nav#mobile-navigation .mobile-menu-item:nth-child(3),
+header #mobile-menu #mobile-menu-wrapper #mobile-menu-content.logged-in #additional-menu-items {
+  display: none;
+}
+header #mobile-menu #mobile-menu-wrapper #mobile-menu-content.logged-in #mobile-profile-section {
+  display: block;
 }
 header #header-content {
   width: 100%;

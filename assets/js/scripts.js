@@ -1,25 +1,26 @@
 let menuBtn = document.getElementById("menu-button"),
     closeBtn = document.getElementById("closeBtn"),
     mobileMenuBtn = document.getElementById("mobile-menu-button")
-    mobileMenu = document.getElementById("mobile-menu"),
+    mobileMenu = document.getElementById("mobile-menu")
+    mobileMenuContent = document.getElementById("mobile-menu-content"),
     mobileMenuHeader = document.getElementById("mobile-menu-header"),
     langSelect = document.getElementById("languageSelector"),
-    body = document.getElementsByTagName("body")[0];
+    body = document.getElementsByTagName("body")[0],
+    loginBtn = document.getElementById("loginBtn");
+
+var loggedIn = false;
 
 menuBtn.addEventListener("click", function() {
-    console.log("#menu-button clicked!");
     mobileMenu.classList.toggle("opened");
     mobileMenuHeader.classList.toggle("opened");
 });
 
 closeBtn.addEventListener("click", function() {
-    console.log("#closeBtn clicked!");
     mobileMenu.classList.toggle("opened");
     mobileMenuHeader.classList.toggle("opened");
 });
 
 mobileMenuBtn.addEventListener("click", function() {
-    console.log("#menu-button clicked!");
     mobileMenu.classList.toggle("opened");
     mobileMenuHeader.classList.toggle("opened");
 });
@@ -31,4 +32,16 @@ langSelect.addEventListener("click", function() {
     } else {
         langSelect.innerHTML = "English";
     }
+});
+
+loginBtn.addEventListener("click", function() {
+    event.preventDefault();
+    if( loggedIn == false) {
+        loggedIn = true;
+        mobileMenuContent.classList.toggle("logged-in");
+    } else {
+        loggedIn = false;
+        mobileMenuContent.classList.toggle("logged-in");
+    }
+    console.log(loggedIn);
 });

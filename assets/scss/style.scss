@@ -301,7 +301,7 @@ header {
                             }
                         }
                     }
-                    #language-selector {
+                    #mobile-language-selector {
                         text-align: center;
                         vertical-align: middle;
                         padding: 1rem 0;
@@ -381,8 +381,93 @@ header {
             }
         }
         #desktop-nav-wrapper {
-            @media screen and (max-width: $desktop) {
+            z-index: 999;
+            @media screen and (max-width: calc(#{$desktop} - 1px)) {
                 display: none;
+            }
+            nav#desktop-navigation {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    width: 100%;
+                    color: $white;
+                    font-size: 1rem;
+                    line-height: 150%;
+                    li.menu-item {
+                        margin: 0 0.75rem;
+                        position: relative;
+                        ul.sub-menu {
+                            visibility: hidden;
+                            position: absolute;
+                            transition: all 0.5s ease;
+                            margin-top: 1rem;
+                            opacity: 0;
+                            left: 0;
+                            width: 0;
+                            display: none;
+                            background: $white;
+                            color: $gold-dark;
+                            font-weight: normal;
+                            font-size: 1rem;
+                            line-height: 150%;
+                            border-radius: .375rem;
+                            padding: 1.875rem;
+                            columns: 2;
+                            -webkit-columns: 2;
+                            -moz-columns: 2;
+                            transform: all .3s ease;
+                            &:hover,
+                            &:focus {
+                                visibility: visible;
+                                opacity: 1;
+                                display: block;
+                                width: max-content;
+                            }
+                            li {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: flex-start;
+                                padding: 1rem 0;
+                                border-bottom: 1px solid $grey;
+                                clear: both;
+                                &:nth-child(3n) {
+                                    border-bottom: none;
+                                } 
+                                img {}
+                                .sub-menu-item-text {
+                                    margin-left: 1.25rem;
+                                    span {
+                                        color: $blue;
+                                        font-size: .8125rem;
+                                        line-height: 123%;
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                        &:hover,
+                        &:focus-within {
+                            font-weight: bold;
+                            cursor: pointer;
+                            .sub-menu {
+                                visibility: visible !important;
+                                opacity: 1 !important;
+                                display: block !important;
+                                width: max-content;
+                            }
+                        }
+                        &:focus-within {
+                            a {
+                                outline: none;
+                            }
+                        }
+                    }
+                }
             }
         }
         #header-right {
